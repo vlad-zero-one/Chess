@@ -3,9 +3,9 @@ namespace Game
     public struct ChessPosition
     {
         public char File;
-        public byte Rank;
+        public int Rank;
 
-        public ChessPosition(char file, byte rank)
+        public ChessPosition(char file, int rank)
         {
             File = file;
             Rank = rank;

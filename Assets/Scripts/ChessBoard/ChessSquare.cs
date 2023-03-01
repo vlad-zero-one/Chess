@@ -18,9 +18,21 @@ namespace Game
             SetColor();
         }
 
+        public void Init(ChessPosition position, Color color)
+        {
+            ChessPosition = position;
+
+            SetColor(color);
+        }
+
         private void SetColor()
         {
             spriteRenderer.color = ColorType == ColorType.Black ? Color.black : Color.white;
+        }
+
+        private void SetColor(Color color)
+        {
+            spriteRenderer.color = color;
         }
     }
 
