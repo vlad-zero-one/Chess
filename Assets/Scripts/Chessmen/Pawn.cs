@@ -1,6 +1,8 @@
+using Game.Moves;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UniRx;
 using Unity.VisualScripting;
@@ -10,32 +12,29 @@ namespace Game
 {
     public class Pawn : ChessPiece
     {
-        [SerializeField] private MovePropertySerializable firstMove;
-        [SerializeField] private MovePropertySerializable enPassantMove;
-        [SerializeField] private MovePropertySerializable defaultMove;
+        public Pawn(Owner owner, ChessPosition position) : base(owner, position) { }
 
-        public IObservable<Null> OnMove => onMove;
-
-        private Subject<Null> onMove = new();
-
-        public override bool CanMove(ChessPosition targetPosition)
+        protected override List<Move> CreateMoves()
         {
-            throw new System.NotImplementedException();
+            return new() { new PawnMove(), new PawnFirstMove(), new EnPassantMove() };
         }
 
-        public override void Move(ChessPosition targetPosition)
+        protected override void FilterMoves()
         {
-            if (!CanMove(targetPosition)) return;
+            if (movesCount != 0)
+            {
+                RemoveMove(moves.FirstOrDefault(move => move is PawnFirstMove));
+            }
 
-            ChessPosition = targetPosition;
-            movesCount++;
-            onMove.OnNext(null);
-        }
+            if (movesCount > 3)
+            {
+                RemoveMove(moves.FirstOrDefault(move => move is EnPassantMove));
+            }
 
-        public void Init(Owner owner)
-        {
-            CurrentMoveProperty = firstMove.Get;
-            Owner = owner;
+            foreach(var move in moves)
+            {
+
+            }
         }
     }
 }

@@ -9,8 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9178f7aeb2c74c549875cab5148f0b5e, type: 3}
-  m_Name: ClassicBoardSettings
+  m_Script: {fileID: 11500000, guid: b7c7213b458b9bd4ebf564c6c637276b, type: 3}
+  m_Name: Pawn
   m_EditorClassIdentifier: 
-  Files: 41004200430044004500460047004800
-  Ranks: 0100000002000000030000000400000005000000060000000700000008000000

@@ -2,13 +2,22 @@ namespace Game
 {
     public struct ChessPosition
     {
-        public char File;
-        public int Rank;
+        public int FileIndex;
+        public int RankIndex;
 
-        public ChessPosition(char file, int rank)
+        public ChessPosition(int fileIndex, int rankIndex)
         {
-            File = file;
-            Rank = rank;
+            FileIndex = fileIndex;
+            RankIndex = rankIndex;
+        }
+
+#if UNITY_EDITOR
+        public override string ToString()
+        {
+            //DependencyInjection.DI.Get<Managers.BoardManager>();
+
+            return $"{FileIndex}{RankIndex}";
         }
     }
+#endif
 }

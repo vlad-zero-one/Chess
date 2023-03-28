@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace Game.Moves
 {
     public interface IMove
@@ -5,17 +7,22 @@ namespace Game.Moves
         /// <summary>
         /// Init Move with board controller
         /// </summary>
-        void Init(BoardController boardController);
+        public void Init(BoardController boardController);
 
         /// <summary>
         /// Returns true if this move is available false if not.
         /// </summary>
         /// <returns>Returns true if this move is available false if not.</returns>
-        bool IsAvailable();
+        public bool IsAvailable();
 
         /// <summary>
         /// Execute move
         /// </summary>
-        void Execute();
+        public void Execute();
+
+
+
+        public List<ChessPosition> GetMovePositions(ChessPosition position);
+
     }
 }
