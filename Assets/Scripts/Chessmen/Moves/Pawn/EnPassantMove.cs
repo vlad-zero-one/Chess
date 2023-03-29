@@ -15,10 +15,11 @@ namespace Game.Moves
 
         public override List<ChessPosition> GetMovePositions(ChessPosition position)
         {
-            var list = new List<ChessPosition>();
-
-            list.Add(new(position.FileIndex - 1, reverse ? position.RankIndex - 1 : position.RankIndex + 1));
-            list.Add(new(position.FileIndex + 1, reverse ? position.RankIndex - 1 : position.RankIndex + 1));
+            var list = new List<ChessPosition>
+            {
+                new(position.FileIndex - 1, reverse ? position.RankIndex - 1 : position.RankIndex + 1),
+                new(position.FileIndex + 1, reverse ? position.RankIndex - 1 : position.RankIndex + 1)
+            };
 
             return list;
         }

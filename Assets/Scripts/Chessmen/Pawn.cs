@@ -16,7 +16,12 @@ namespace Game
 
         protected override List<Move> CreateMoves()
         {
-            return new() { new PawnMove(), new PawnFirstMove(), new EnPassantMove() };
+            return new() 
+            {
+                new PawnMove(),
+                new PawnFirstMove(), 
+                new EnPassantMove() 
+            };
         }
 
         protected override void FilterMoves()

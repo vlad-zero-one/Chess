@@ -17,8 +17,6 @@ namespace Game
 
         public ChessPosition ChessPosition { get; protected set; }
 
-        public MoveProperty CurrentMoveProperty { get; protected set; }
-
         protected List<Move> moves;
 
         public ChessPiece(Owner owner, ChessPosition position)
@@ -68,7 +66,6 @@ namespace Game
             throw new NotImplementedException();
         }
 
-        // ÕŒ¬¿ﬂ œ¿–¿ƒ»√Ã¿
         public List<ChessPosition> GetMovePositions()
         {
             FilterMoves();
