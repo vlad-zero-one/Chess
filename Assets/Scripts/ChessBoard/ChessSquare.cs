@@ -14,10 +14,4 @@ namespace Game
             ChessPosition = position;
         }
     }
-
-    public enum ColorType
-    {
-        Black,
-        White
-    }
 }

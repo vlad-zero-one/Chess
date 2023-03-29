@@ -85,10 +85,4 @@ namespace Game
             return;
         }
     }
-
-    public enum Owner
-    {
-        White,
-        Black
-    }
 }
